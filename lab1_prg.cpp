@@ -17,9 +17,9 @@ void CPUFrequency()
     long double dur;
     LARGE_INTEGER frequency, t_end , t_beg;
     QueryPerformanceCounter(&t_beg);
-    QueryPerformanceCounter(&t_end);
     QueryPerformanceFrequency(&frequency);
-    printf("\n2.1 CPU frequency:     %u  HZ: ", frequency);
+    QueryPerformanceCounter(&t_end);
+    printf("\n2.1 CPU frequency:     %lu  HZ: ", frequency);
     dur = (1000000 * (long double(t_end.QuadPart) - long double(t_beg.QuadPart)) / long double(frequency.QuadPart));
     cout << "\n2.2 Measurement duration: " << dur << "  mcs";
 }
